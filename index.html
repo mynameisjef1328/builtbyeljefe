@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>builtbyeljefe, coming soon</title>
+  <meta name="description" content="builtbyeljefe, simple iOS apps, clean builds, sharp UX. Coming soon." />
+  <meta name="theme-color" content="#0b0b10" />
+
+  <!-- Social preview (safe defaults) -->
+  <meta property="og:title" content="builtbyeljefe, coming soon" />
+  <meta property="og:description" content="Simple iOS apps. Clean builds. Sharp UX." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://builtbyeljefe.com/" />
+  <meta name="twitter:card" content="summary" />
+
+  <style>
+    :root{
+      --bg0:#07070c;
+      --bg1:#0c0c14;
+      --card:rgba(255,255,255,.06);
+      --border:rgba(255,255,255,.12);
+      --text:rgba(255,255,255,.92);
+      --muted:rgba(255,255,255,.68);
+      --muted2:rgba(255,255,255,.48);
+      --accent:rgba(255,178,0,.95);
+      --accent2:rgba(255,140,0,.95);
+      --shadow: 0 18px 60px rgba(0,0,0,.55);
+      --radius: 18px;
+      --max: 980px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color: var(--text);
+      background:
+        radial-gradient(900px 600px at 20% 20%, rgba(255,178,0,.12), transparent 60%),
+        radial-gradient(700px 500px at 80% 30%, rgba(120,90,255,.12), transparent 60%),
+        radial-gradient(900px 700px at 60% 90%, rgba(0,180,255,.10), transparent 60%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 34px 16px;
+    }
+
+    .wrap{
+      width:100%;
+      max-width: var(--max);
+    }
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      margin-bottom: 18px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .mark{
+      width:44px;height:44px;
+      border-radius: 14px;
+      background:
+        radial-gradient(18px 18px at 30% 30%, rgba(255,255,255,.30), transparent 55%),
+        linear-gradient(135deg, rgba(255,178,0,.95), rgba(255,120,0,.95));
+      box-shadow: 0 10px 28px rgba(255,150,0,.22);
+      border: 1px solid rgba(255,255,255,.18);
+    }
+
+    .brand-title{
+      line-height:1.05;
+    }
+    .brand-title .name{
+      font-weight:750;
+      letter-spacing:.2px;
+      font-size: 16px;
+    }
+    .brand-title .tag{
+      font-size: 12px;
+      color: var(--muted2);
+      margin-top: 2px;
+    }
+
+    .links{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .chip{
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
+      text-decoration:none;
+      font-size: 13px;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      user-select:none;
+    }
+    .chip:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.07);
+      border-color: rgba(255,255,255,.18);
+      color: var(--text);
+    }
+
+    main{
+      border: 1px solid var(--border);
+      background: rgba(0,0,0,.18);
+      backdrop-filter: blur(10px);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px;
+      overflow:hidden;
+      position:relative;
+    }
+
+    .glow{
+      position:absolute;
+      inset:-2px;
+      background:
+        radial-gradient(500px 280px at 20% 10%, rgba(255,178,0,.18), transparent 62%),
+        radial-gradient(420px 260px at 70% 35%, rgba(120,90,255,.16), transparent 60%),
+        radial-gradient(520px 320px at 60% 95%, rgba(0,180,255,.12), transparent 62%);
+      filter: blur(6px);
+      pointer-events:none;
+      opacity:.9;
+    }
+
+    .content{
+      position:relative;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 22px;
+      align-items:start;
+    }
+
+    h1{
+      margin: 4px 0 10px 0;
+      font-size: clamp(32px, 4.2vw, 48px);
+      line-height: 1.05;
+      letter-spacing: -0.6px;
+    }
+
+    .sub{
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.55;
+      margin: 0 0 18px 0;
+      max-width: 52ch;
+    }
+
+    .pill{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      padding: 10px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 12px;
+      user-select:none;
+    }
+    .dot{
+      width:9px;height:9px;border-radius: 99px;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(255,178,0,.16);
+    }
+
+    .cta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top: 16px;
+    }
+
+    .btn{
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      padding: 12px 14px;
+      border-radius: 12px;
+      text-decoration:none;
+      font-weight:650;
+      font-size: 14px;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.09);
+      border-color: rgba(255,255,255,.20);
+    }
+
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(255,178,0,.95), rgba(255,120,0,.92));
+      border-color: rgba(255,255,255,.16);
+      color: rgba(10,10,14,.92);
+      box-shadow: 0 12px 28px rgba(255,150,0,.16);
+    }
+    .btn.primary:hover{
+      box-shadow: 0 16px 34px rgba(255,150,0,.22);
+    }
+
+    .card{
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.04);
+      border-radius: 16px;
+      padding: 16px;
+    }
+    .card h2{
+      margin: 0 0 8px 0;
+      font-size: 14px;
+      letter-spacing: .2px;
+      color: rgba(255,255,255,.86);
+      font-weight: 750;
+      text-transform: uppercase;
+    }
+    .card p{
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 14px;
+    }
+
+    form{
+      margin-top: 12px;
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+
+    input[type="email"]{
+      flex:1;
+      min-width: 180px;
+      background: rgba(0,0,0,.25);
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 12px;
+      padding: 12px 12px;
+      color: var(--text);
+      outline: none;
+      font-size: 14px;
+    }
+
+    input[type="email"]::placeholder{color: rgba(255,255,255,.45)}
+    input[type="email"]:focus{
+      border-color: rgba(255,178,0,.45);
+      box-shadow: 0 0 0 4px rgba(255,178,0,.12);
+    }
+
+    button{
+      cursor:pointer;
+      border: 0;
+      padding: 12px 14px;
+      border-radius: 12px;
+      font-weight: 750;
+      font-size: 14px;
+      background: linear-gradient(135deg, rgba(255,178,0,.95), rgba(255,120,0,.92));
+      color: rgba(10,10,14,.92);
+      white-space:nowrap;
+    }
+    button:active{transform: translateY(1px)}
+
+    .fine{
+      margin-top: 12px;
+      color: rgba(255,255,255,.42);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    footer{
+      margin-top: 14px;
+      color: rgba(255,255,255,.38);
+      font-size: 12px;
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .status{
+      margin-top:10px;
+      font-size: 13px;
+      color: rgba(255,255,255,.68);
+      display:none;
+    }
+
+    @media (max-width: 860px){
+      .content{grid-template-columns: 1fr; }
+      header{flex-direction:column; align-items:flex-start;}
+      .links{justify-content:flex-start;}
+      main{padding: 22px;}
+      form{flex-direction:column; align-items:stretch;}
+      button{width:100%;}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="/" aria-label="builtbyeljefe home">
+        <div class="mark" aria-hidden="true"></div>
+        <div class="brand-title">
+          <div class="name">builtbyeljefe</div>
+          <div class="tag">iOS builds, clean UX, minimal noise</div>
+        </div>
+      </a>
+
+      <nav class="links" aria-label="links">
+        <a class="chip" href="https://instagram.com/builtbyeljefe" rel="noreferrer" target="_blank">Instagram</a>
+        <a class="chip" href="https://x.com/builtbyeljefe" rel="noreferrer" target="_blank">X</a>
+        <a class="chip" href="mailto:jeff@builtbyeljefe.com">jeff@builtbyeljefe.com</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="glow" aria-hidden="true"></div>
+
+      <div class="content">
+        <section>
+          <div class="pill"><span class="dot"></span><span>Coming soon</span></div>
+          <h1>Small apps. Clean builds. Built with taste.</h1>
+          <p class="sub">
+            I’m building a tiny studio focused on simple iOS apps that feel great to use.
+            No bloat, no noise, just sharp UX and satisfying details.
+          </p>
+
+          <div class="cta">
+            <a class="btn primary" href="mailto:jeff@builtbyeljefe.com?subject=BuiltByElJefe%20-%20keep%20me%20posted">Email me</a>
+            <a class="btn" href="#notify">Get launch ping</a>
+          </div>
+        </section>
+
+        <aside class="card" id="notify">
+          <h2>Launch list</h2>
+          <p>Want a heads-up when the first app drops? Add your email.</p>
+
+          <!-- No backend yet: this stores to localStorage + opens a mailto -->
+          <form id="notifyForm">
+            <input id="email" type="email" placeholder="you@domain.com" autocomplete="email" required />
+            <button type="submit">Notify me</button>
+          </form>
+
+          <div id="status" class="status">Saved. I’ll ping you at launch.</div>
+          <div class="fine">No spam. One email when something real ships.</div>
+        </aside>
+      </div>
+    </main>
+
+    <footer>
+      <div>© <span id="year"></span> builtbyeljefe</div>
+      <div>Made in the dark with too much coffee.</div>
+    </footer>
+  </div>
+
+  <script>
+    const yearEl = document.getElementById("year");
+    yearEl.textContent = new Date().getFullYear();
+
+    const form = document.getElementById("notifyForm");
+    const emailInput = document.getElementById("email");
+    const status = document.getElementById("status");
+
+    // preload previously saved email
+    const saved = localStorage.getItem("bbe_notify_email");
+    if (saved) emailInput.value = saved;
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const email = (emailInput.value || "").trim();
+      if (!email) return;
+
+      localStorage.setItem("bbe_notify_email", email);
+      status.style.display = "block";
+
+      // Optional: open a prefilled email to you (acts like a lightweight "signup")
+      const subject = encodeURIComponent("builtbyeljefe, launch list");
+      const body = encodeURIComponent(`Hey Jeff,\n\nPlease add me to the builtbyeljefe launch list:\n\n${email}\n`);
+      window.location.href = `mailto:jeff@builtbyeljefe.com?subject=${subject}&body=${body}`;
+    });
+  </script>
+</body>
+</html>
