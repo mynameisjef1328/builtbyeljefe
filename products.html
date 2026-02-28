@@ -1,1 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Products — builtbyeljefe</title>
+  <meta name="description" content="builtbyeljefe — products coming soon." />
+  <meta name="theme-color" content="#FAF8F3" />
 
+  <meta property="og:title" content="Products — builtbyeljefe" />
+  <meta property="og:description" content="iOS apps, Notion templates, and digital tools. Coming soon." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="<https://builtbyeljefe.com/products>" />
+  <meta name="twitter:card" content="summary" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:      #FAF8F3;
+      --ink:        #1C1915;
+      --ink-mid:    #6B6560;
+      --ink-faint:  #A8A29D;
+      --orange:     #F97316;
+    }
+
+    html, body { height: 100%; }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      min-height: 100svh;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      padding: clamp(28px, 5vw, 60px) clamp(24px, 6vw, 80px);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    /* ── Main ── */
+    main {
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px 0;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--ink-faint);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      margin-bottom: 48px;
+      transition: color 0.15s;
+    }
+
+    .back-link:hover { color: var(--ink); }
+
+    .back-link svg {
+      width: 12px;
+      height: 12px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-bottom: 20px;
+    }
+
+    .eyebrow span { color: var(--orange); }
+
+    h1 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(32px, 4.5vw, 52px);
+      font-weight: normal;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .sub {
+      font-size: clamp(15px, 1.8vw, 17px);
+      line-height: 1.7;
+      color: var(--ink-mid);
+      max-width: 46ch;
+      margin-bottom: 52px;
+    }
+
+    /* ── Product slots ── */
+    .products {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-bottom: 56px;
+    }
+
+    .product {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(28, 25, 21, 0.1);
+    }
+
+    .product:first-child { border-top: 1px solid rgba(28, 25, 21, 0.1); }
+
+    .product-left {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .product-category {
+      font-size: 10.5px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+    }
+
+    .product-name {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--ink-mid);
+    }
+
+    .product-status {
+      font-size: 11.5px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .product-status.soon { color: var(--orange); }
+
+    /* ── Form ── */
+    .form-label {
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-bottom: 14px;
+    }
+
+    .notify {
+      display: flex;
+      border-bottom: 1.5px solid var(--ink);
+      align-items: stretch;
+      max-width: 420px;
+      padding-bottom: 10px;
+      transition: border-color 0.2s;
+    }
+
+    .notify:focus-within { border-color: var(--orange); }
+
+    .notify input {
+      flex: 1;
+      background: none;
+      border: none;
+      outline: none;
+      font-size: 15px;
+      font-family: inherit;
+      color: var(--ink);
+      min-width: 0;
+    }
+
+    .notify input::placeholder { color: var(--ink-faint); }
+
+    .notify button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 13px;
+      font-family: inherit;
+      font-weight: 600;
+      color: var(--ink);
+      letter-spacing: 0.06em;
+      padding: 0 0 0 16px;
+      white-space: nowrap;
+      transition: color 0.15s;
+    }
+
+    .notify button:hover { color: var(--orange); }
+    .notify button.sent  { color: var(--orange); pointer-events: none; }
+
+    .fine {
+      margin-top: 10px;
+      font-size: 11.5px;
+      color: var(--ink-faint);
+    }
+
+    /* ── Footer ── */
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(28, 25, 21, 0.12);
+      font-size: 12px;
+      color: var(--ink-faint);
+    }
+
+    .footer-links { display: flex; gap: 20px; }
+
+    .footer-links a {
+      color: var(--ink-faint);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .footer-links a:hover { color: var(--ink); }
+  </style>
+</head>
+<body>
+
+  <main>
+    <a href="/" class="back-link">
+      <svg viewBox="0 0 16 16"><polyline points="10 4 6 8 10 12"/></svg>
+      Back
+    </a>
+
+    <p class="eyebrow">Products &nbsp;·&nbsp; <span>coming soon</span></p>
+
+    <h1>Nothing to buy.<br>Not yet.</h1>
+
+    <p class="sub">
+      Products are on the way. Get on the list and I'll let you know
+      the moment something ships.
+    </p>
+
+    <div class="products">
+      <div class="product">
+        <div class="product-left">
+          <span class="product-category">iOS App</span>
+          <span class="product-name">TBD — something focused</span>
+        </div>
+        <span class="product-status soon">In progress</span>
+      </div>
+      <div class="product">
+        <div class="product-left">
+          <span class="product-category">Notion Template</span>
+          <span class="product-name">TBD — a system that actually sticks</span>
+        </div>
+        <span class="product-status">Coming soon</span>
+      </div>
+      <div class="product">
+        <div class="product-left">
+          <span class="product-category">Digital Tool</span>
+          <span class="product-name">TBD — still cooking</span>
+        </div>
+        <span class="product-status">Coming soon</span>
+      </div>
+    </div>
+
+    <p class="form-label">Notify me when something ships</p>
+    <form class="notify" id="notifyForm">
+      <input type="email" id="email" placeholder="your@email.com" autocomplete="email" required />
+      <button type="submit" id="notifyBtn">Notify me →</button>
+    </form>
+    <p class="fine">No spam. One email when something real ships.</p>
+  </main>
+
+  <footer>
+    <span>© <span id="year"></span> builtbyeljefe &nbsp;·&nbsp; Made with too much coffee.</span>
+    <nav class="footer-links">
+      <a href="<https://instagram.com/builtbyeljefe>" rel="noreferrer" target="_blank">Instagram</a>
+      <a href="<https://x.com/builtbyeljefe>" rel="noreferrer" target="_blank">X</a>
+      <a href="mailto:jeff@builtbyeljefe.com">Contact</a>
+    </nav>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const form  = document.getElementById('notifyForm');
+    const input = document.getElementById('email');
+    const btn   = document.getElementById('notifyBtn');
+
+    const saved = localStorage.getItem('bbe_notify_email');
+    if (saved) input.value = saved;
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = input.value.trim();
+      if (!email) return;
+
+      localStorage.setItem('bbe_notify_email', email);
+      btn.textContent = "You're on the list";
+      btn.classList.add('sent');
+      input.disabled = true;
+
+      const subject = encodeURIComponent('builtbyeljefe — launch list');
+      const body    = encodeURIComponent(`Hey Jeff,\n\nPlease add me to the builtbyeljefe launch list:\n\n${email}\n`);
+      window.location.href = `mailto:jeff@builtbyeljefe.com?subject=${subject}&body=${body}`;
+    });
+  </script>
+
+</body>
+</html>
