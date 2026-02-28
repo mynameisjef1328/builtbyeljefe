@@ -1,11 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>builtbyeljefe — coming soon</title>
   <meta name="description" content="builtbyeljefe — tools, templates, and apps built with care. Coming soon." />
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#FAF8F3" />
 
   <meta property="og:title" content="builtbyeljefe — coming soon" />
   <meta property="og:description" content="Tools, templates, and apps built with care." />
@@ -14,382 +14,231 @@
   <meta name="twitter:card" content="summary" />
 
   <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     :root {
-      --bg:     #0a0a0a;
-      --bg1:    #111111;
-      --border: rgba(255,255,255,.1);
-      --text:   rgba(255,255,255,.9);
-      --muted:  rgba(255,255,255,.52);
-      --muted2: rgba(255,255,255,.3);
-      --orange: #f97316;
-      --max:    860px;
+      --cream:      #FAF8F3;
+      --ink:        #1C1915;
+      --ink-mid:    #6B6560;
+      --ink-faint:  #A8A29D;
+      --orange:     #F97316;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
     html, body { height: 100%; }
 
     body {
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100%;
-      padding: 40px 20px;
-    }
-
-    .wrap {
-      width: 100%;
-      max-width: var(--max);
-      display: flex;
-      flex-direction: column;
-      gap: 36px;
-    }
-
-    /* ── Header ── */
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .mark {
-      width: 36px;
-      height: 36px;
-      border-radius: 9px;
-      background: var(--orange);
-      flex-shrink: 0;
-    }
-
-    .brand-name {
-      font-size: 15px;
-      font-weight: 600;
-      letter-spacing: -.1px;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    .chip {
-      padding: 7px 12px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 12.5px;
-      transition: color .12s, border-color .12s;
-    }
-    .chip:hover {
-      color: var(--text);
-      border-color: rgba(255,255,255,.22);
+      background: var(--cream);
+      color: var(--ink);
+      min-height: 100svh;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      padding: clamp(28px, 5vw, 60px) clamp(24px, 6vw, 80px);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
     }
 
     /* ── Main ── */
     main {
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      background: var(--bg1);
-      padding: 40px;
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 40px;
-      align-items: start;
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px 0;
     }
 
-    /* left col */
-    .lead { display: flex; flex-direction: column; gap: 14px; }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 6px 12px;
+    .eyebrow {
       font-size: 12px;
-      color: var(--muted);
-      width: fit-content;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-bottom: 40px;
     }
-    .dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--orange);
-    }
+
+    .eyebrow span { color: var(--orange); }
 
     h1 {
-      font-size: clamp(28px, 4vw, 42px);
-      line-height: 1.08;
-      letter-spacing: -.5px;
-      font-weight: 700;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(36px, 5.5vw, 64px);
+      font-weight: normal;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
     }
 
     .sub {
-      font-size: 15px;
-      line-height: 1.6;
-      color: var(--muted);
-      max-width: 46ch;
+      font-size: clamp(15px, 1.8vw, 17px);
+      line-height: 1.7;
+      color: var(--ink-mid);
+      max-width: 48ch;
+      margin-bottom: 48px;
     }
 
-    .cta {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      padding-top: 4px;
-    }
-
-    .btn {
-      padding: 11px 16px;
-      border-radius: 10px;
-      font-size: 13.5px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: opacity .12s;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.06);
-      color: var(--text);
-    }
-    .btn:hover { opacity: .75; }
-
-    .btn.primary {
-      background: var(--orange);
-      border-color: var(--orange);
-      color: #0a0a0a;
-    }
-
-    /* right col */
-    .card {
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 22px;
+    /* ── What's coming ── */
+    .list {
+      list-style: none;
       display: flex;
       flex-direction: column;
+      gap: 10px;
+      margin-bottom: 56px;
+    }
+
+    .list li {
+      font-size: 14px;
+      color: var(--ink-mid);
+      display: flex;
+      align-items: baseline;
       gap: 12px;
     }
 
-    .card-title {
+    .list li::before {
+      content: '';
+      width: 20px;
+      height: 1px;
+      background: var(--ink-faint);
+      flex-shrink: 0;
+      position: relative;
+      top: -3px;
+    }
+
+    /* ── Form ── */
+    .form-label {
       font-size: 12px;
-      font-weight: 600;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      letter-spacing: .7px;
-      color: var(--muted2);
+      color: var(--ink-faint);
+      margin-bottom: 14px;
     }
 
-    .card p {
-      font-size: 13.5px;
-      line-height: 1.55;
-      color: var(--muted);
+    .notify {
+      display: flex;
+      border-bottom: 1.5px solid var(--ink);
+      align-items: stretch;
+      max-width: 420px;
+      padding-bottom: 10px;
+      transition: border-color 0.2s;
     }
 
-    form { display: flex; flex-direction: column; gap: 8px; }
+    .notify:focus-within { border-color: var(--orange); }
 
-    input[type="email"] {
-      background: rgba(0,0,0,.35);
-      border: 1px solid var(--border);
-      border-radius: 9px;
-      padding: 11px 12px;
-      color: var(--text);
-      font-size: 13.5px;
-      outline: none;
-      width: 100%;
-      transition: border-color .12s;
-    }
-    input[type="email"]::placeholder { color: var(--muted2); }
-    input[type="email"]:focus { border-color: rgba(249,115,22,.45); }
-
-    button {
-      cursor: pointer;
+    .notify input {
+      flex: 1;
+      background: none;
       border: none;
-      padding: 11px;
-      border-radius: 9px;
-      font-size: 13.5px;
-      font-weight: 600;
-      background: var(--orange);
-      color: #0a0a0a;
-      transition: opacity .12s;
+      outline: none;
+      font-size: 15px;
+      font-family: inherit;
+      color: var(--ink);
+      min-width: 0;
     }
-    button:hover { opacity: .85; }
-    button:active { transform: translateY(1px); }
+
+    .notify input::placeholder { color: var(--ink-faint); }
+
+    .notify button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 13px;
+      font-family: inherit;
+      font-weight: 600;
+      color: var(--ink);
+      letter-spacing: 0.06em;
+      padding: 0 0 0 16px;
+      white-space: nowrap;
+      transition: color 0.15s;
+    }
+
+    .notify button:hover { color: var(--orange); }
+    .notify button.sent  { color: var(--orange); pointer-events: none; }
 
     .fine {
+      margin-top: 10px;
       font-size: 11.5px;
-      color: var(--muted2);
-      line-height: 1.5;
-    }
-
-    .status {
-      font-size: 13px;
-      color: var(--muted);
-      display: none;
-    }
-
-    /* ── Offerings ── */
-    .offerings {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-    }
-
-    .offering {
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 18px;
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
-
-    .offering-icon {
-      font-size: 17px;
-      line-height: 1;
-      margin-bottom: 4px;
-    }
-
-    .offering-title {
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    .offering-desc {
-      font-size: 12.5px;
-      color: var(--muted);
-      line-height: 1.5;
+      color: var(--ink-faint);
     }
 
     /* ── Footer ── */
     footer {
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      gap: 10px;
       flex-wrap: wrap;
+      gap: 12px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(28, 25, 21, 0.12);
       font-size: 12px;
-      color: var(--muted2);
+      color: var(--ink-faint);
     }
 
-    /* ── Responsive ── */
-    @media (max-width: 660px) {
-      main {
-        grid-template-columns: 1fr;
-        padding: 24px;
-        gap: 28px;
-      }
-      .offerings { grid-template-columns: 1fr; }
-      header { flex-direction: column; align-items: flex-start; }
-      nav { justify-content: flex-start; }
+    .footer-links { display: flex; gap: 20px; }
+
+    .footer-links a {
+      color: var(--ink-faint);
+      text-decoration: none;
+      transition: color 0.15s;
     }
+
+    .footer-links a:hover { color: var(--ink); }
   </style>
 </head>
-
 <body>
-  <div class="wrap">
 
-    <header>
-      <a class="brand" href="/" aria-label="builtbyeljefe home">
-        <div class="mark" aria-hidden="true"></div>
-        <span class="brand-name">builtbyeljefe</span>
-      </a>
+  <main>
+    <p class="eyebrow">builtbyeljefe &nbsp;·&nbsp; <span>coming soon</span></p>
 
-      <nav aria-label="links">
-        <a class="chip" href="<https://instagram.com/builtbyeljefe>" rel="noreferrer" target="_blank">Instagram</a>
-        <a class="chip" href="<https://x.com/builtbyeljefe>" rel="noreferrer" target="_blank">X</a>
-        <a class="chip" href="mailto:jeff@builtbyeljefe.com">Contact</a>
-      </nav>
-    </header>
+    <h1>Things worth<br>building. Worth using.</h1>
 
-    <main>
-      <div class="lead">
-        <div class="badge"><span class="dot"></span>Coming soon</div>
+    <p class="sub">
+      iOS apps, Notion templates, and digital tools — made by one person
+      who'd rather ship something useful than something impressive.
+    </p>
 
-        <h1>Useful things,<br>built with care.</h1>
+    <ul class="list">
+      <li>iOS apps that do one thing well</li>
+      <li>Notion templates for people who'd rather work than organise</li>
+      <li>Utilities and automations worth the download</li>
+    </ul>
 
-        <p class="sub">
-          Apps, templates, and tools made to actually fit into your workflow.
-          No bloat, no fluff — just things worth using.
-        </p>
+    <p class="form-label">Get notified</p>
+    <form class="notify" id="notifyForm">
+      <input type="email" id="email" placeholder="your@email.com" autocomplete="email" required />
+      <button type="submit" id="notifyBtn">Notify me →</button>
+    </form>
+    <p class="fine">No spam. One email when something real ships.</p>
+  </main>
 
-        <div class="cta">
-          <a class="btn primary" href="mailto:jeff@builtbyeljefe.com?subject=builtbyeljefe%20%E2%80%94%20keep%20me%20posted">Get in touch</a>
-          <a class="btn" href="#notify">Join the list</a>
-        </div>
-      </div>
-
-      <aside class="card" id="notify">
-        <div class="card-title">Launch list</div>
-        <p>Drop your email and I'll reach out when something new ships.</p>
-
-        <form id="notifyForm">
-          <input id="email" type="email" placeholder="you@domain.com" autocomplete="email" required />
-          <button type="submit">Notify me</button>
-        </form>
-
-        <div id="status" class="status">You're on the list.</div>
-        <div class="fine">No spam. One email when something real ships.</div>
-      </aside>
-    </main>
-
-    <div class="offerings">
-      <div class="offering">
-        <div class="offering-icon">📱</div>
-        <div class="offering-title">iOS Apps</div>
-        <div class="offering-desc">Focused apps that do one thing well, without getting in the way.</div>
-      </div>
-      <div class="offering">
-        <div class="offering-icon">🗂</div>
-        <div class="offering-title">Notion Templates</div>
-        <div class="offering-desc">Systems for people who'd rather work than organise their workspace.</div>
-      </div>
-      <div class="offering">
-        <div class="offering-icon">⚙️</div>
-        <div class="offering-title">Digital Tools</div>
-        <div class="offering-desc">Utilities, automations, and whatever else turns out to be worth building.</div>
-      </div>
-    </div>
-
-    <footer>
-      <span>© <span id="year"></span> builtbyeljefe</span>
-      <span>Made with too much coffee.</span>
-    </footer>
-
-  </div>
+  <footer>
+    <span>© <span id="year"></span> builtbyeljefe &nbsp;·&nbsp; Made with too much coffee.</span>
+    <nav class="footer-links">
+      <a href="<https://instagram.com/builtbyeljefe>" rel="noreferrer" target="_blank">Instagram</a>
+      <a href="<https://x.com/builtbyeljefe>" rel="noreferrer" target="_blank">X</a>
+      <a href="mailto:jeff@builtbyeljefe.com">Contact</a>
+    </nav>
+  </footer>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-    const form = document.getElementById("notifyForm");
-    const emailInput = document.getElementById("email");
-    const status = document.getElementById("status");
+    const form  = document.getElementById('notifyForm');
+    const input = document.getElementById('email');
+    const btn   = document.getElementById('notifyBtn');
 
-    const saved = localStorage.getItem("bbe_notify_email");
-    if (saved) emailInput.value = saved;
+    const saved = localStorage.getItem('bbe_notify_email');
+    if (saved) input.value = saved;
 
-    form.addEventListener("submit", (e) => {
+    form.addEventListener('submit', (e) => {
       e.preventDefault();
-      const email = (emailInput.value || "").trim();
+      const email = input.value.trim();
       if (!email) return;
 
-      localStorage.setItem("bbe_notify_email", email);
-      status.style.display = "block";
+      localStorage.setItem('bbe_notify_email', email);
+      btn.textContent = "You're on the list";
+      btn.classList.add('sent');
+      input.disabled = true;
 
-      const subject = encodeURIComponent("builtbyeljefe — launch list");
-      const body = encodeURIComponent(`Hey Jeff,\n\nPlease add me to the builtbyeljefe launch list:\n\n${email}\n`);
+      const subject = encodeURIComponent('builtbyeljefe — launch list');
+      const body    = encodeURIComponent(`Hey Jeff,\n\nPlease add me to the builtbyeljefe launch list:\n\n${email}\n`);
       window.location.href = `mailto:jeff@builtbyeljefe.com?subject=${subject}&body=${body}`;
     });
   </script>
+
 </body>
 </html>
