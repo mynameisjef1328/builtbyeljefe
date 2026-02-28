@@ -3,381 +3,378 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>builtbyeljefe, coming soon</title>
-  <meta name="description" content="builtbyeljefe, simple iOS apps, clean builds, sharp UX. Coming soon." />
-  <meta name="theme-color" content="#0b0b10" />
+  <title>builtbyeljefe — coming soon</title>
+  <meta name="description" content="builtbyeljefe — tools, templates, and apps built with care. Coming soon." />
+  <meta name="theme-color" content="#0a0a0a" />
 
-  <!-- Social preview (safe defaults) -->
-  <meta property="og:title" content="builtbyeljefe, coming soon" />
-  <meta property="og:description" content="Simple iOS apps. Clean builds. Sharp UX." />
+  <meta property="og:title" content="builtbyeljefe — coming soon" />
+  <meta property="og:description" content="Tools, templates, and apps built with care." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://builtbyeljefe.com/" />
+  <meta property="og:url" content="<https://builtbyeljefe.com/>" />
   <meta name="twitter:card" content="summary" />
 
   <style>
-    :root{
-      --bg0:#07070c;
-      --bg1:#0c0c14;
-      --card:rgba(255,255,255,.06);
-      --border:rgba(255,255,255,.12);
-      --text:rgba(255,255,255,.92);
-      --muted:rgba(255,255,255,.68);
-      --muted2:rgba(255,255,255,.48);
-      --accent:rgba(255,178,0,.95);
-      --accent2:rgba(255,140,0,.95);
-      --shadow: 0 18px 60px rgba(0,0,0,.55);
-      --radius: 18px;
-      --max: 980px;
+    :root {
+      --bg:     #0a0a0a;
+      --bg1:    #111111;
+      --border: rgba(255,255,255,.1);
+      --text:   rgba(255,255,255,.9);
+      --muted:  rgba(255,255,255,.52);
+      --muted2: rgba(255,255,255,.3);
+      --orange: #f97316;
+      --max:    860px;
     }
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+
+    body {
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
       color: var(--text);
-      background:
-        radial-gradient(900px 600px at 20% 20%, rgba(255,178,0,.12), transparent 60%),
-        radial-gradient(700px 500px at 80% 30%, rgba(120,90,255,.12), transparent 60%),
-        radial-gradient(900px 700px at 60% 90%, rgba(0,180,255,.10), transparent 60%),
-        linear-gradient(180deg, var(--bg0), var(--bg1));
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding: 34px 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100%;
+      padding: 40px 20px;
     }
 
-    .wrap{
-      width:100%;
+    .wrap {
+      width: 100%;
       max-width: var(--max);
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
     }
 
-    header{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:14px;
-      margin-bottom: 18px;
+    /* ── Header ── */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
     }
 
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      text-decoration:none;
-      color:inherit;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
     }
 
-    .mark{
-      width:44px;height:44px;
-      border-radius: 14px;
-      background:
-        radial-gradient(18px 18px at 30% 30%, rgba(255,255,255,.30), transparent 55%),
-        linear-gradient(135deg, rgba(255,178,0,.95), rgba(255,120,0,.95));
-      box-shadow: 0 10px 28px rgba(255,150,0,.22);
-      border: 1px solid rgba(255,255,255,.18);
+    .mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 9px;
+      background: var(--orange);
+      flex-shrink: 0;
     }
 
-    .brand-title{
-      line-height:1.05;
-    }
-    .brand-title .name{
-      font-weight:750;
-      letter-spacing:.2px;
-      font-size: 16px;
-    }
-    .brand-title .tag{
-      font-size: 12px;
-      color: var(--muted2);
-      margin-top: 2px;
+    .brand-name {
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: -.1px;
     }
 
-    .links{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
-    .chip{
-      padding: 10px 12px;
+    .chip {
+      padding: 7px 12px;
       border-radius: 999px;
       border: 1px solid var(--border);
-      background: rgba(255,255,255,.04);
       color: var(--muted);
-      text-decoration:none;
-      font-size: 13px;
-      transition: transform .12s ease, background .12s ease, border-color .12s ease;
-      user-select:none;
+      text-decoration: none;
+      font-size: 12.5px;
+      transition: color .12s, border-color .12s;
     }
-    .chip:hover{
-      transform: translateY(-1px);
-      background: rgba(255,255,255,.07);
-      border-color: rgba(255,255,255,.18);
+    .chip:hover {
       color: var(--text);
+      border-color: rgba(255,255,255,.22);
     }
 
-    main{
+    /* ── Main ── */
+    main {
       border: 1px solid var(--border);
-      background: rgba(0,0,0,.18);
-      backdrop-filter: blur(10px);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 28px;
-      overflow:hidden;
-      position:relative;
+      border-radius: 16px;
+      background: var(--bg1);
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 40px;
+      align-items: start;
     }
 
-    .glow{
-      position:absolute;
-      inset:-2px;
-      background:
-        radial-gradient(500px 280px at 20% 10%, rgba(255,178,0,.18), transparent 62%),
-        radial-gradient(420px 260px at 70% 35%, rgba(120,90,255,.16), transparent 60%),
-        radial-gradient(520px 320px at 60% 95%, rgba(0,180,255,.12), transparent 62%);
-      filter: blur(6px);
-      pointer-events:none;
-      opacity:.9;
-    }
+    /* left col */
+    .lead { display: flex; flex-direction: column; gap: 14px; }
 
-    .content{
-      position:relative;
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 22px;
-      align-items:start;
-    }
-
-    h1{
-      margin: 4px 0 10px 0;
-      font-size: clamp(32px, 4.2vw, 48px);
-      line-height: 1.05;
-      letter-spacing: -0.6px;
-    }
-
-    .sub{
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.55;
-      margin: 0 0 18px 0;
-      max-width: 52ch;
-    }
-
-    .pill{
-      display:inline-flex;
-      gap:10px;
-      align-items:center;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.05);
-      padding: 10px 12px;
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--border);
       border-radius: 999px;
-      font-size: 13px;
+      padding: 6px 12px;
+      font-size: 12px;
       color: var(--muted);
-      margin-bottom: 12px;
-      user-select:none;
+      width: fit-content;
     }
-    .dot{
-      width:9px;height:9px;border-radius: 99px;
-      background: var(--accent);
-      box-shadow: 0 0 0 4px rgba(255,178,0,.16);
-    }
-
-    .cta{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-top: 16px;
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--orange);
     }
 
-    .btn{
-      border: 1px solid rgba(255,255,255,.16);
+    h1 {
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.08;
+      letter-spacing: -.5px;
+      font-weight: 700;
+    }
+
+    .sub {
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 46ch;
+    }
+
+    .cta {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      padding-top: 4px;
+    }
+
+    .btn {
+      padding: 11px 16px;
+      border-radius: 10px;
+      font-size: 13.5px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity .12s;
+      border: 1px solid var(--border);
       background: rgba(255,255,255,.06);
       color: var(--text);
-      padding: 12px 14px;
+    }
+    .btn:hover { opacity: .75; }
+
+    .btn.primary {
+      background: var(--orange);
+      border-color: var(--orange);
+      color: #0a0a0a;
+    }
+
+    /* right col */
+    .card {
+      border: 1px solid var(--border);
       border-radius: 12px;
-      text-decoration:none;
-      font-weight:650;
-      font-size: 14px;
-      transition: transform .12s ease, background .12s ease, border-color .12s ease;
-    }
-    .btn:hover{
-      transform: translateY(-1px);
-      background: rgba(255,255,255,.09);
-      border-color: rgba(255,255,255,.20);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
 
-    .btn.primary{
-      background: linear-gradient(135deg, rgba(255,178,0,.95), rgba(255,120,0,.92));
-      border-color: rgba(255,255,255,.16);
-      color: rgba(10,10,14,.92);
-      box-shadow: 0 12px 28px rgba(255,150,0,.16);
-    }
-    .btn.primary:hover{
-      box-shadow: 0 16px 34px rgba(255,150,0,.22);
-    }
-
-    .card{
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.04);
-      border-radius: 16px;
-      padding: 16px;
-    }
-    .card h2{
-      margin: 0 0 8px 0;
-      font-size: 14px;
-      letter-spacing: .2px;
-      color: rgba(255,255,255,.86);
-      font-weight: 750;
-      text-transform: uppercase;
-    }
-    .card p{
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.55;
-      font-size: 14px;
-    }
-
-    form{
-      margin-top: 12px;
-      display:flex;
-      gap:10px;
-      align-items:center;
-    }
-
-    input[type="email"]{
-      flex:1;
-      min-width: 180px;
-      background: rgba(0,0,0,.25);
-      border: 1px solid rgba(255,255,255,.14);
-      border-radius: 12px;
-      padding: 12px 12px;
-      color: var(--text);
-      outline: none;
-      font-size: 14px;
-    }
-
-    input[type="email"]::placeholder{color: rgba(255,255,255,.45)}
-    input[type="email"]:focus{
-      border-color: rgba(255,178,0,.45);
-      box-shadow: 0 0 0 4px rgba(255,178,0,.12);
-    }
-
-    button{
-      cursor:pointer;
-      border: 0;
-      padding: 12px 14px;
-      border-radius: 12px;
-      font-weight: 750;
-      font-size: 14px;
-      background: linear-gradient(135deg, rgba(255,178,0,.95), rgba(255,120,0,.92));
-      color: rgba(10,10,14,.92);
-      white-space:nowrap;
-    }
-    button:active{transform: translateY(1px)}
-
-    .fine{
-      margin-top: 12px;
-      color: rgba(255,255,255,.42);
+    .card-title {
       font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .7px;
+      color: var(--muted2);
+    }
+
+    .card p {
+      font-size: 13.5px;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+
+    form { display: flex; flex-direction: column; gap: 8px; }
+
+    input[type="email"] {
+      background: rgba(0,0,0,.35);
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      padding: 11px 12px;
+      color: var(--text);
+      font-size: 13.5px;
+      outline: none;
+      width: 100%;
+      transition: border-color .12s;
+    }
+    input[type="email"]::placeholder { color: var(--muted2); }
+    input[type="email"]:focus { border-color: rgba(249,115,22,.45); }
+
+    button {
+      cursor: pointer;
+      border: none;
+      padding: 11px;
+      border-radius: 9px;
+      font-size: 13.5px;
+      font-weight: 600;
+      background: var(--orange);
+      color: #0a0a0a;
+      transition: opacity .12s;
+    }
+    button:hover { opacity: .85; }
+    button:active { transform: translateY(1px); }
+
+    .fine {
+      font-size: 11.5px;
+      color: var(--muted2);
       line-height: 1.5;
     }
 
-    footer{
-      margin-top: 14px;
-      color: rgba(255,255,255,.38);
-      font-size: 12px;
-      display:flex;
-      justify-content:space-between;
-      gap:10px;
-      flex-wrap:wrap;
-    }
-
-    .status{
-      margin-top:10px;
+    .status {
       font-size: 13px;
-      color: rgba(255,255,255,.68);
-      display:none;
+      color: var(--muted);
+      display: none;
     }
 
-    @media (max-width: 860px){
-      .content{grid-template-columns: 1fr; }
-      header{flex-direction:column; align-items:flex-start;}
-      .links{justify-content:flex-start;}
-      main{padding: 22px;}
-      form{flex-direction:column; align-items:stretch;}
-      button{width:100%;}
+    /* ── Offerings ── */
+    .offerings {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .offering {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .offering-icon {
+      font-size: 17px;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .offering-title {
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .offering-desc {
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ── Footer ── */
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      font-size: 12px;
+      color: var(--muted2);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 660px) {
+      main {
+        grid-template-columns: 1fr;
+        padding: 24px;
+        gap: 28px;
+      }
+      .offerings { grid-template-columns: 1fr; }
+      header { flex-direction: column; align-items: flex-start; }
+      nav { justify-content: flex-start; }
     }
   </style>
 </head>
 
 <body>
   <div class="wrap">
+
     <header>
       <a class="brand" href="/" aria-label="builtbyeljefe home">
         <div class="mark" aria-hidden="true"></div>
-        <div class="brand-title">
-          <div class="name">builtbyeljefe</div>
-          <div class="tag">iOS builds, clean UX, minimal noise</div>
-        </div>
+        <span class="brand-name">builtbyeljefe</span>
       </a>
 
-      <nav class="links" aria-label="links">
-        <a class="chip" href="https://instagram.com/builtbyeljefe" rel="noreferrer" target="_blank">Instagram</a>
-        <a class="chip" href="https://x.com/builtbyeljefe" rel="noreferrer" target="_blank">X</a>
-        <a class="chip" href="mailto:jeff@builtbyeljefe.com">jeff@builtbyeljefe.com</a>
+      <nav aria-label="links">
+        <a class="chip" href="<https://instagram.com/builtbyeljefe>" rel="noreferrer" target="_blank">Instagram</a>
+        <a class="chip" href="<https://x.com/builtbyeljefe>" rel="noreferrer" target="_blank">X</a>
+        <a class="chip" href="mailto:jeff@builtbyeljefe.com">Contact</a>
       </nav>
     </header>
 
     <main>
-      <div class="glow" aria-hidden="true"></div>
+      <div class="lead">
+        <div class="badge"><span class="dot"></span>Coming soon</div>
 
-      <div class="content">
-        <section>
-          <div class="pill"><span class="dot"></span><span>Coming soon</span></div>
-          <h1>Small apps. Clean builds. Built with taste.</h1>
-          <p class="sub">
-            I’m building a tiny studio focused on simple iOS apps that feel great to use.
-            No bloat, no noise, just sharp UX and satisfying details.
-          </p>
+        <h1>Useful things,<br>built with care.</h1>
 
-          <div class="cta">
-            <a class="btn primary" href="mailto:jeff@builtbyeljefe.com?subject=BuiltByElJefe%20-%20keep%20me%20posted">Email me</a>
-            <a class="btn" href="#notify">Get launch ping</a>
-          </div>
-        </section>
+        <p class="sub">
+          Apps, templates, and tools made to actually fit into your workflow.
+          No bloat, no fluff — just things worth using.
+        </p>
 
-        <aside class="card" id="notify">
-          <h2>Launch list</h2>
-          <p>Want a heads-up when the first app drops? Add your email.</p>
-
-          <!-- No backend yet: this stores to localStorage + opens a mailto -->
-          <form id="notifyForm">
-            <input id="email" type="email" placeholder="you@domain.com" autocomplete="email" required />
-            <button type="submit">Notify me</button>
-          </form>
-
-          <div id="status" class="status">Saved. I’ll ping you at launch.</div>
-          <div class="fine">No spam. One email when something real ships.</div>
-        </aside>
+        <div class="cta">
+          <a class="btn primary" href="mailto:jeff@builtbyeljefe.com?subject=builtbyeljefe%20%E2%80%94%20keep%20me%20posted">Get in touch</a>
+          <a class="btn" href="#notify">Join the list</a>
+        </div>
       </div>
+
+      <aside class="card" id="notify">
+        <div class="card-title">Launch list</div>
+        <p>Drop your email and I'll reach out when something new ships.</p>
+
+        <form id="notifyForm">
+          <input id="email" type="email" placeholder="you@domain.com" autocomplete="email" required />
+          <button type="submit">Notify me</button>
+        </form>
+
+        <div id="status" class="status">You're on the list.</div>
+        <div class="fine">No spam. One email when something real ships.</div>
+      </aside>
     </main>
 
+    <div class="offerings">
+      <div class="offering">
+        <div class="offering-icon">📱</div>
+        <div class="offering-title">iOS Apps</div>
+        <div class="offering-desc">Focused apps that do one thing well, without getting in the way.</div>
+      </div>
+      <div class="offering">
+        <div class="offering-icon">🗂</div>
+        <div class="offering-title">Notion Templates</div>
+        <div class="offering-desc">Systems for people who'd rather work than organise their workspace.</div>
+      </div>
+      <div class="offering">
+        <div class="offering-icon">⚙️</div>
+        <div class="offering-title">Digital Tools</div>
+        <div class="offering-desc">Utilities, automations, and whatever else turns out to be worth building.</div>
+      </div>
+    </div>
+
     <footer>
-      <div>© <span id="year"></span> builtbyeljefe</div>
-      <div>Made in the dark with too much coffee.</div>
+      <span>© <span id="year"></span> builtbyeljefe</span>
+      <span>Made with too much coffee.</span>
     </footer>
+
   </div>
 
   <script>
-    const yearEl = document.getElementById("year");
-    yearEl.textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
 
     const form = document.getElementById("notifyForm");
     const emailInput = document.getElementById("email");
     const status = document.getElementById("status");
 
-    // preload previously saved email
     const saved = localStorage.getItem("bbe_notify_email");
     if (saved) emailInput.value = saved;
 
@@ -389,8 +386,7 @@
       localStorage.setItem("bbe_notify_email", email);
       status.style.display = "block";
 
-      // Optional: open a prefilled email to you (acts like a lightweight "signup")
-      const subject = encodeURIComponent("builtbyeljefe, launch list");
+      const subject = encodeURIComponent("builtbyeljefe — launch list");
       const body = encodeURIComponent(`Hey Jeff,\n\nPlease add me to the builtbyeljefe launch list:\n\n${email}\n`);
       window.location.href = `mailto:jeff@builtbyeljefe.com?subject=${subject}&body=${body}`;
     });
