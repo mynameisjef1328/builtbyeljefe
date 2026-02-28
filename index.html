@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Products — builtbyeljefe</title>
-  <meta name="description" content="builtbyeljefe — products coming soon." />
+  <title>builtbyeljefe — coming soon</title>
+  <meta name="description" content="builtbyeljefe — tools, templates, and apps built with care. Coming soon." />
   <meta name="theme-color" content="#FAF8F3" />
 
-  <meta property="og:title" content="Products — builtbyeljefe" />
-  <meta property="og:description" content="iOS apps, Notion templates, and digital tools. Coming soon." />
+  <meta property="og:title" content="builtbyeljefe — coming soon" />
+  <meta property="og:description" content="Tools, templates, and apps built with care." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="<https://builtbyeljefe.com/products>" />
+  <meta property="og:url" content="<https://builtbyeljefe.com/>" />
   <meta name="twitter:card" content="summary" />
 
   <style>
@@ -45,105 +45,77 @@
       padding: 60px 0;
     }
 
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12px;
-      color: var(--ink-faint);
-      text-decoration: none;
-      letter-spacing: 0.06em;
-      margin-bottom: 48px;
-      transition: color 0.15s;
-    }
-
-    .back-link:hover { color: var(--ink); }
-
-    .back-link svg {
-      width: 12px;
-      height: 12px;
-      stroke: currentColor;
-      fill: none;
-      stroke-width: 2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
     .eyebrow {
       font-size: 12px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--ink-faint);
-      margin-bottom: 20px;
+      margin-bottom: 40px;
     }
 
     .eyebrow span { color: var(--orange); }
 
     h1 {
       font-family: Georgia, 'Times New Roman', serif;
-      font-size: clamp(32px, 4.5vw, 52px);
+      font-size: clamp(36px, 5.5vw, 64px);
       font-weight: normal;
       line-height: 1.1;
       letter-spacing: -0.02em;
-      margin-bottom: 16px;
+      margin-bottom: 24px;
     }
 
     .sub {
       font-size: clamp(15px, 1.8vw, 17px);
       line-height: 1.7;
       color: var(--ink-mid);
-      max-width: 46ch;
-      margin-bottom: 52px;
+      max-width: 48ch;
+      margin-bottom: 48px;
     }
 
-    /* ── Product slots ── */
-    .products {
+    /* ── What's coming ── */
+    .list {
+      list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 0;
-      margin-bottom: 56px;
+      gap: 10px;
+      margin-bottom: 20px;
     }
 
-    .product {
+    .list li {
+      font-size: 14px;
+      color: var(--ink-mid);
       display: flex;
       align-items: baseline;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 18px 0;
-      border-bottom: 1px solid rgba(28, 25, 21, 0.1);
+      gap: 12px;
     }
 
-    .product:first-child { border-top: 1px solid rgba(28, 25, 21, 0.1); }
-
-    .product-left {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .product-category {
-      font-size: 10.5px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--ink-faint);
-    }
-
-    .product-name {
-      font-size: 15px;
-      font-weight: 500;
-      color: var(--ink-mid);
-    }
-
-    .product-status {
-      font-size: 11.5px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--ink-faint);
-      white-space: nowrap;
+    .list li::before {
+      content: '';
+      width: 20px;
+      height: 1px;
+      background: var(--ink-faint);
       flex-shrink: 0;
+      position: relative;
+      top: -3px;
     }
 
-    .product-status.soon { color: var(--orange); }
+    .browse-link {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      margin-bottom: 52px;
+      border-bottom: 1px solid var(--ink-faint);
+      padding-bottom: 1px;
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    .browse-link:hover {
+      color: var(--orange);
+      border-color: var(--orange);
+    }
 
     /* ── Form ── */
     .form-label {
@@ -228,45 +200,24 @@
 <body>
 
   <main>
-    <a href="/" class="back-link">
-      <svg viewBox="0 0 16 16"><polyline points="10 4 6 8 10 12"/></svg>
-      Back
-    </a>
+    <p class="eyebrow">builtbyeljefe &nbsp;·&nbsp; <span>coming soon</span></p>
 
-    <p class="eyebrow">Products &nbsp;·&nbsp; <span>coming soon</span></p>
-
-    <h1>Nothing to buy.<br>Not yet.</h1>
+    <h1>Things worth<br>building. Worth using.</h1>
 
     <p class="sub">
-      Products are on the way. Get on the list and I'll let you know
-      the moment something ships.
+      iOS apps, Notion templates, and digital tools — made by one person
+      who'd rather ship something useful than something impressive.
     </p>
 
-    <div class="products">
-      <div class="product">
-        <div class="product-left">
-          <span class="product-category">iOS App</span>
-          <span class="product-name">TBD — something focused</span>
-        </div>
-        <span class="product-status soon">In progress</span>
-      </div>
-      <div class="product">
-        <div class="product-left">
-          <span class="product-category">Notion Template</span>
-          <span class="product-name">TBD — a system that actually sticks</span>
-        </div>
-        <span class="product-status">Coming soon</span>
-      </div>
-      <div class="product">
-        <div class="product-left">
-          <span class="product-category">Digital Tool</span>
-          <span class="product-name">TBD — still cooking</span>
-        </div>
-        <span class="product-status">Coming soon</span>
-      </div>
-    </div>
+    <ul class="list">
+      <li>iOS apps that do one thing well</li>
+      <li>Notion templates for people who'd rather work than organise</li>
+      <li>Utilities and automations worth the download</li>
+    </ul>
 
-    <p class="form-label">Notify me when something ships</p>
+    <a href="/products" class="browse-link">Browse upcoming products →</a>
+
+    <p class="form-label">Get notified</p>
     <form class="notify" id="notifyForm">
       <input type="email" id="email" placeholder="your@email.com" autocomplete="email" required />
       <button type="submit" id="notifyBtn">Notify me →</button>
