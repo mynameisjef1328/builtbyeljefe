@@ -27,13 +27,17 @@
     html, body { height: 100%; }
 
     body {
-      background: url('background.jpg') center center / cover no-repeat fixed;
+      background: url('background.jpg') 75% 15% / cover no-repeat scroll;
       color: var(--ink);
       min-height: 100svh;
       display: grid;
       grid-template-rows: 1fr auto;
       padding: clamp(28px, 5vw, 60px) clamp(24px, 6vw, 80px);
       font-family: 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    @media (max-width: 480px) {
+      body { background-position: 85% 10%; }
     }
 
     /* ── Main ── */
