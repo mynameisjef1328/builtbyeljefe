@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Products — builtbyeljefe</title>
   <meta name="description" content="builtbyeljefe — products coming soon." />
-  <meta name="theme-color" content="#FAF8F3" />
+  <meta name="theme-color" content="#1C1C1C" />
 
   <meta property="og:title" content="Products — builtbyeljefe" />
   <meta property="og:description" content="iOS apps, Notion templates, and digital tools. Coming soon." />
@@ -17,17 +17,18 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --cream:      #FAF8F3;
-      --ink:        #1C1915;
-      --ink-mid:    #3A3530;
-      --ink-faint:  #4A4540;
-      --orange:     #F97316;
+      --cream:      #1a1a1a;
+      --ink:        #EDE6D6;
+      --ink-mid:    #DDD6C6;
+      --ink-faint:  #BDB6A6;
+      --orange:     #DF8330;
     }
 
     html, body { height: 100%; }
 
     body {
-      background: url('background1.jpg') 75% 15% / cover no-repeat scroll;
+      background: url('background.jpg') 75% 15% / cover no-repeat fixed;
+      background-color: #1C1C1C;
       color: var(--ink);
       min-height: 100svh;
       display: grid;
@@ -61,7 +62,7 @@
       transition: color 0.15s;
     }
 
-    .back-link:hover { color: var(--ink); }
+    .back-link:hover { color: var(--orange); }
 
     .back-link svg {
       width: 12px;
@@ -114,10 +115,10 @@
       justify-content: space-between;
       gap: 16px;
       padding: 18px 0;
-      border-bottom: 1px solid rgba(28, 25, 21, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     }
 
-    .product:first-child { border-top: 1px solid rgba(28, 25, 21, 0.1); }
+    .product:first-child { border-top: 1px solid rgba(255, 255, 255, 0.15); }
 
     .product-left {
       display: flex;
@@ -213,7 +214,7 @@
       flex-wrap: wrap;
       gap: 12px;
       padding-top: 28px;
-      border-top: 1px solid rgba(28, 25, 21, 0.12);
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
       font-size: 12px;
       color: var(--ink-faint);
     }
@@ -226,7 +227,7 @@
       transition: color 0.15s;
     }
 
-    .footer-links a:hover { color: var(--ink); }
+    .footer-links a:hover { color: var(--orange); }
   </style>
 </head>
 <body>
